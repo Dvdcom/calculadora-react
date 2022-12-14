@@ -1,33 +1,51 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+/*Ajustes de Root*/
+:root{
+    /*paleta de colores*/
+    --color-primario:#D9D9D9;
+    --color-secundario: #D99F59;
+    --color-terciario:#BF5315;
+    --color-opcional:#D9731A;
+}
+/* ESTILOS DE APP : CONTENEDO PRINCIPAL*/
+
+#App{
+  min-width: 395px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  background-image: url(/public/img/Escritorio.png);
+  background-size:cover;
+  background-position:right;
+  background-repeat:no-repeat;
 }
 
-.App-logo {
-  height: 40vmin;
+/* ------ ESTILOS DE HEADER ------ */
+
+#Seccion-logito{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+#Seccion-logito h1{
+  font-size: small;
+}
+
+#App-logo {
+  height: 1.3rem;
   pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  #App-logo {
+    animation: App-logo-spin infinite 10s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +53,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ------  ESTILOS DE MAIN ------  */
+
+
+/* ------  ESTILOS DE FOOTER ------  */
+
+#footer{
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: x-small;
+  padding-right: 50px;  
 }
