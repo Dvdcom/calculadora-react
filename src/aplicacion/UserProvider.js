@@ -1,7 +1,7 @@
 
 import React, { useState, useContext, useEffect } from "react";
-import {numeros} from '../aplicacion/Caracteres';
-import {cortadores} from '../aplicacion/Caracteres'
+import { numeros } from './Arreglos';
+import { cortadores } from './Arreglos'
 
 const ingresarValor = React.createContext();
 const mostrarValor = React.createContext();
@@ -14,10 +14,10 @@ export function useMostrarValor() {
     return useContext(mostrarValor);
 }
 
-export function UserProvider (props) {
+export function UserProvider(props) {
 
     const [valor, setValor] = useState(0);
-    const [numbers , setNumbers] = useState([]);
+    const [numbers, setNumbers] = useState([]);
     /* const [primerNumero, setPrimerNumero] = useState(0); */
     /* const [segundoNumero, setSegundoNumero] = useState(0); */
     /* const [memoria, setMemoria] = useState(0) */
@@ -25,13 +25,13 @@ export function UserProvider (props) {
     useEffect(() => {
         /* concatenar el numero  */
         let num = "";
-        if (numbers.length > 0){
+        if (numbers.length > 0) {
             numbers.map(element => {
-            return num += element;
-        })
-        /* setear valor */
-        setValor(num);
-        } 
+                return num += element;
+            })
+            /* setear valor */
+            setValor(num);
+        }
 
     }, [numbers])
 
@@ -41,17 +41,17 @@ export function UserProvider (props) {
         let ingreso = e.target.value;
 
         /* concatenar si son numeros y puntos */
-        if( numeros.includes(ingreso)){
-            setNumbers(numbers =>[...numbers,ingreso]);
+        if (numeros.includes(ingreso)) {
+            setNumbers(numbers => [...numbers, ingreso]);
         }
 
-        switch(cortadores.includes(ingreso)) {
+        switch (cortadores.includes(ingreso)) {
             case ingreso === "AC":
                 setValor(0);
-            break;
+                break;
             case ingreso === "MR":
                 console.log('El número permanece en memoria');
-            break;
+                break;
             case ingreso === "=":
                 console.log('Dar el resultado');
                 break;
