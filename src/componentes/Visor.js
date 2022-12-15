@@ -1,10 +1,14 @@
 import React from 'react';
+import { useMostrarValor } from '../aplicacion/UserProvider';
 
 const Visor = () => {
+
+    const valor = useMostrarValor();
+
     return (
-        <div class="resultado mb-3">
+        <div className="resultado mb-3">
         <div id="marca">CASIO</div>
-        <input class="form-control mt-3" name="in-resultado" id="in-resultado" value="Tu Resultado..."/>
+        <label className="form-control mt-3" type='text' name="in-resultado" id="in-resultado" placeholder='Su resultado es...'>{valor}</label>
     </div>
     );
 };

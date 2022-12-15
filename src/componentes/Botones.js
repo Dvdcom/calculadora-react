@@ -12,8 +12,8 @@ const Botones = () => {
                 <Boton data={element} key={index} index={index}/>
             )}
         </div>
-        <div class="version-mobile">
-            <div class="botones-mobile">
+        <div className="version-mobile">
+            <div className="botones-mobile">
             {caracteresSimples.map((element,index) => 
                 <Boton data={element} key={index} index={index}/>
             )}
