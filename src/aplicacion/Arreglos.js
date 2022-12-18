@@ -2,8 +2,6 @@ export const caracteres = ["=","(",")","+/-","X²","²√","ⁿ√","sin","cos",
 export const caracteresSimples = ["=","+","-","/","*","1","2","3","²√","4","5","6","AC","7","8","9",".","0","%"];
 export const numeros = ["0","1","2","3","4","5","6","7","8","9",".","+/-"];
 export const cortadores = ["=","X²","²√","ⁿ√","sin","cos","tg","X³","³√","Xⁿ","/","%","In","*","log","e","-","AC","ᴨ","+","MR"];
-export const unParametro = ["sin","cos","tg","log","²√","³√","X²","X³","Ln"];
-export const dosParametros = ["=","+","-","*","/","ⁿ√","Xⁿ","%"];
 export const funcionesMath = [
     {
         tipo: 'suma',

@@ -50,9 +50,9 @@ export function UserProvider(props) {
     useEffect(() => {
         if (operacion !== valorInicial){
             console.log(operacion);
-            darResultado();
+            realizarOperacion();
         }
-    }, [operacion])// eslint-disable-line react-hooks/exhaustive-deps
+    }, [operacion,subtotal])// eslint-disable-line react-hooks/exhaustive-deps
 
     const ingresoValores = (e) => {
         /* logica de ingreso */
@@ -71,13 +71,15 @@ export function UserProvider(props) {
                     guardarEnMemoria();
                     break;
                 default:
-                    realizarOperacion(ingreso);
+                    asignarOperacion(ingreso);
             }
         }
 
     }
 
     const limpiarDisplay = () => {
+        setOperacion(valorInicial);
+        setSubtotal(0);
         setNumbers([]);
         setValor(0);
     }
@@ -91,7 +93,7 @@ export function UserProvider(props) {
         }
     }   
     
-    const realizarOperacion = (arg) => {
+    const asignarOperacion = (arg) => {
 
         console.log('se ejecuta: realizar operacion');
         /* ------- ASIGNO VALORES A LA OPERACION : -------- */
@@ -110,12 +112,11 @@ export function UserProvider(props) {
             limpiarDisplay(); 
             setValor(subtotal);
         }
-
-        limpiarDisplay();
-
+        setNumbers([]);
+        setValor(0);
     }
 
-    const darResultado = () => {
+    const realizarOperacion = () => {
         /* ------- ENTREGO EL RESULTADO REALIZANDO LA OPERACION : ------- */
         console.log('se ejecuto dar resultado');
         /* Solo cuando operacion sea activado */
@@ -126,14 +127,12 @@ export function UserProvider(props) {
                 } else if ( element.params === 2 && element.id === operacion.op ){
                     let resultado = element.operar(operacion.num1,operacion.num2)
                     setSubtotal(resultado);
+                    setValor(resultado);
                 }
             }); 
-                
-            if( operacion.op !== "="){
-            setValor(operacion.op);
-            }
-    }
 
+    }
+/* idea : ARMAR UN USEEFFECT CON SUBTOTAL TAMBIEN */
     return (
         <mostrarOperacion.Provider value={operacion}>
             <mostrarSubtotal.Provider value={subtotal}>
@@ -146,5 +145,3 @@ export function UserProvider(props) {
         </mostrarOperacion.Provider>
     );
 };
-
-/* CONVERTIR A ENTEROS o DOUBLE */
