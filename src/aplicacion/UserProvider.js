@@ -1,6 +1,6 @@
 
 import React, { useState, useContext, useEffect } from "react";
-import { numeros , cortadores , funcionesMath } from './Arreglos';
+import { numeros, cortadores, funcionesMath } from './Arreglos';
 
 const ingresarValor = React.createContext();
 const mostrarValor = React.createContext();
@@ -25,12 +25,13 @@ export function useMostrarOperacion() {
 
 export function UserProvider(props) {
 
-    const valorInicial = {num1:0,op:"",num2:0};
+    const valorInicial = { num1: 0, op: "", num2: 0 };
     const [valor, setValor] = useState(0);
     const [numbers, setNumbers] = useState([]);
     const [operacion, setOperacion] = useState(valorInicial);
     const [memoria, setMemoria] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
+
 
     useEffect(() => {
         /* concatenar el numero  */
@@ -48,11 +49,18 @@ export function UserProvider(props) {
     }, [numbers])
 
     useEffect(() => {
-        if (operacion !== valorInicial){
+        if (operacion !== valorInicial) {
             console.log(operacion);
             realizarOperacion();
         }
-    }, [operacion,subtotal])// eslint-disable-line react-hooks/exhaustive-deps
+    }, [operacion])// eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        if (subtotal !== 0) {
+            console.log(operacion);
+            darResultado();
+        }
+    }, [subtotal])// eslint-disable-line react-hooks/exhaustive-deps
 
     const ingresoValores = (e) => {
         /* logica de ingreso */
@@ -62,8 +70,8 @@ export function UserProvider(props) {
             setNumbers(numbers => [...numbers, ingreso]);
         }
 
-        if (cortadores.includes(ingreso)){
-        switch (ingreso) {
+        if (cortadores.includes(ingreso)) {
+            switch (ingreso) {
                 case "AC":
                     limpiarDisplay();
                     break;
@@ -91,48 +99,53 @@ export function UserProvider(props) {
             setValor(memoria);
             setMemoria('0')
         }
-    }   
-    
+    }
+
     const asignarOperacion = (arg) => {
 
-        console.log('se ejecuta: realizar operacion');
+        console.log('se ejecuta: asignar Operacion');
         /* ------- ASIGNO VALORES A LA OPERACION : -------- */
-        
+
         var num = Number(document.getElementById('in-resultado').innerHTML);
 
-        if(operacion.num1 === 0){
+        if (operacion.num1 === 0) {
             console.log('se asigna el primer numero')
-            setOperacion({...operacion, num1:num,op:arg,num2:0});
-        }else{
+            setOperacion({ ...operacion, num1: num, op: arg, num2: 0 });
+        } else if (operacion.num2 === 0) {
             console.log('se asigna el segundo numero');
-            setOperacion({...operacion, num1:operacion.num1,op:operacion.op,num2:num});
-        }
-        if (subtotal !== 0 && operacion.num2 !== 0 ){
-            setOperacion({...operacion,num1:subtotal,op:"",num2:0});
-            limpiarDisplay(); 
+            setOperacion({ ...operacion, num1: operacion.num1, op: operacion.op, num2: num });
+        } else {
+            console.log('se asigna el subtotal al num1 y num2 pasa a 0')
+            setOperacion({ ...operacion, num1: subtotal, op: operacion.op, num2: num });
+            setNumbers([]);
             setValor(subtotal);
         }
+
         setNumbers([]);
         setValor(0);
     }
 
     const realizarOperacion = () => {
         /* ------- ENTREGO EL RESULTADO REALIZANDO LA OPERACION : ------- */
-        console.log('se ejecuto dar resultado');
+        console.log('se ejecuto realizar operacion');
         /* Solo cuando operacion sea activado */
-            funcionesMath.forEach(element => {
-                if (element.params === 1 && element.id === operacion.op){
-                    let resultado = element.operar(operacion.num1)
-                    setSubtotal(resultado);
-                } else if ( element.params === 2 && element.id === operacion.op ){
-                    let resultado = element.operar(operacion.num1,operacion.num2)
-                    setSubtotal(resultado);
-                    setValor(resultado);
-                }
-            }); 
-
+        funcionesMath.forEach(element => {
+            if (element.params === 1 && element.id === operacion.op) {
+                let resultado = element.operar(operacion.num1)
+                setSubtotal(resultado);
+            } else if (element.params === 2 && element.id === operacion.op) {
+                let resultado = element.operar(operacion.num1, operacion.num2)
+                setSubtotal(resultado);
+            }
+        });
     }
-/* idea : ARMAR UN USEEFFECT CON SUBTOTAL TAMBIEN */
+
+    const darResultado = () => {
+        console.log('entrego el resultado');
+        setValor(subtotal);
+        console.log(operacion);
+    }
+
     return (
         <mostrarOperacion.Provider value={operacion}>
             <mostrarSubtotal.Provider value={subtotal}>
