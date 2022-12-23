@@ -37,7 +37,7 @@ export const funcionesMath = [
         tipo: 'coseno',
         id: 'cos',
         operar: (num1) => Math.cos(num1),
-        params: 2
+        params: 1
     },
     {
         tipo: 'tangente',

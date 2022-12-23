@@ -67,12 +67,13 @@
 
 #contendoSub{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 #in-resultado{
   color: gray;
+  height: 40px;
 }
 
 input{

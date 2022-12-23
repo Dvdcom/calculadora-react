@@ -24,53 +24,62 @@ export function useMostrarOperacion() {
 }
 
 export function UserProvider(props) {
-
+/* agregar subtotal a operaciones ! */
     const valorInicial = { num1: 0, op: "", num2: 0 };
-    const [valor, setValor] = useState(0);
-    const [numbers, setNumbers] = useState([]);
+    const [valor, setValor] = useState("");
     const [operacion, setOperacion] = useState(valorInicial);
     const [memoria, setMemoria] = useState(0);
     const [subtotal, setSubtotal] = useState(0);
 
-
-    useEffect(() => {
-        /* concatenar el numero  */
-        let num = "";
-        /* pregunto si numbers se encuentra vacio */
-        if (numbers.length > 0) {
-            numbers.map(element => {
-                return num += element;
-            })
-            /* convierto la concatenacion dada por el maps en numero */
-            num = Number(num)
-            /* paso el valor al visor. */
-            setValor(num);
-        }
-    }, [numbers])
+    const [completo, setCompleto] = useState({estado:false,conteo:0});
 
     useEffect(() => {
         if (operacion !== valorInicial) {
-            console.log(operacion);
             realizarOperacion();
         }
     }, [operacion])// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
-        if (subtotal !== 0) {
-            console.log(operacion);
-            darResultado();
+        console.log('el subtotal tiene valor de : ' + subtotal);
+        if( subtotal !== 0) {
+            darResultado('none');
         }
-    }, [subtotal])// eslint-disable-line react-hooks/exhaustive-deps
+    },[subtotal]);// eslint-disable-line react-hooks/exhaustive-deps
 
     const ingresoValores = (e) => {
         /* logica de ingreso */
         let ingreso = e.target.value;
-        /* concatenar si son numeros y puntos */
+        let valorActual = document.getElementById('in-resultado').innerHTML;
+        let valorConcatenado = 0;
+        
         if (numeros.includes(ingreso)) {
-            setNumbers(numbers => [...numbers, ingreso]);
+
+
+            valorConcatenado += Number(valorActual + ingreso);
+            setValor(valorConcatenado);
+            
+            /* realizo asignacion de numero en el hook operacion */
+
+            if (completo.conteo > 2){
+                /*asigno el valor subtotal : ' + subtotal);*/
+                setOperacion({ ...operacion, num1: subtotal, op: operacion.op, num2: valorConcatenado });
+            }else{
+
+                if (completo.estado === false) {
+                    /* asigno el primer valor a operacion' */
+                    setOperacion({ ...operacion, num1: valorConcatenado, op: operacion.op, num2: operacion.num2 });
+                }else{
+                    /* asigno el segundo valor a operacion' */
+                    setOperacion({ ...operacion, num1: operacion.num1, op: operacion.op, num2: valorConcatenado });
+                }
+            }
+
         }
 
         if (cortadores.includes(ingreso)) {
+            /* levanto banderin cada que ingresa un cortador */
+            setCompleto({...completo,estado:true,conteo:completo.conteo + 1});
+
             switch (ingreso) {
                 case "AC":
                     limpiarDisplay();
@@ -78,18 +87,33 @@ export function UserProvider(props) {
                 case "MR":
                     guardarEnMemoria();
                     break;
+                case "=":
+                    darResultado(ingreso);
+                    break;
+                case "e":
+                    setOperacion({ ...operacion, num1: operacion.num1, op: ingreso, num2: operacion.num2 });
+                break;
                 default:
-                    asignarOperacion(ingreso);
+                    if (operacion.num2 === 0 ) {
+                        setOperacion({ ...operacion, num1: operacion.num1, op: ingreso, num2: 0 });
+                    }else if (operacion.num1 !== 0 && operacion.num2 !== 0){
+                        setOperacion({ ...operacion, num1: subtotal, op: ingreso, num2: 0 });
+                    }
+                    if ( operacion.num2 === 0 && subtotal !== 0){
+                        setOperacion({ ...operacion, num1: subtotal, op: ingreso, num2: 0 });
+                    }
+                    setValor("");
             }
         }
 
     }
 
     const limpiarDisplay = () => {
+        /* seteo los valores  */
+        setValor("");
         setOperacion(valorInicial);
         setSubtotal(0);
-        setNumbers([]);
-        setValor(0);
+        setCompleto({...completo,estado:false,conteo:0})
     }
 
     const guardarEnMemoria = () => {
@@ -101,49 +125,38 @@ export function UserProvider(props) {
         }
     }
 
-    const asignarOperacion = (arg) => {
-
-        console.log('se ejecuta: asignar Operacion');
-        /* ------- ASIGNO VALORES A LA OPERACION : -------- */
-
-        var num = Number(document.getElementById('in-resultado').innerHTML);
-
-        if (operacion.num1 === 0) {
-            console.log('se asigna el primer numero')
-            setOperacion({ ...operacion, num1: num, op: arg, num2: 0 });
-        } else if (operacion.num2 === 0) {
-            console.log('se asigna el segundo numero');
-            setOperacion({ ...operacion, num1: operacion.num1, op: operacion.op, num2: num });
-        } else {
-            console.log('se asigna el subtotal al num1 y num2 pasa a 0')
-            setOperacion({ ...operacion, num1: subtotal, op: operacion.op, num2: num });
-            setNumbers([]);
-            setValor(subtotal);
+    const realizarOperacion = () => {
+        /* ------- ENTREGO EL RESULTADO DEL SUBTOTAL REALIZANDO LA OPERACION : ------- */
+        if(operacion.op !== ""){
+            /* Se ejecuta realizar operacion */
+            console.log('se ejecuta realizar operacion ' + operacion.op)
+            funcionesMath.forEach(element => {
+                if (element.params === 1 && element.id === operacion.op) {
+                    let resultado = Number(element.operar(operacion.num1));
+                    console.log('el resultado es : '+ resultado)
+                    setSubtotal(resultado);
+                    setValor(resultado);
+                } else if (element.params === 2 && element.id === operacion.op && operacion.num2 > 0) {
+                    let resultado = Number(element.operar(operacion.num1, operacion.num2));
+                    setSubtotal(resultado);
+                } else if (element.params === 0 && element.id === operacion.op){
+                    let resultado = Number(element.operar());
+                    console.log('el resultado es : '+ resultado)
+                    setSubtotal(resultado);
+                    setValor(resultado);
+                }
+            });
         }
 
-        setNumbers([]);
-        setValor(0);
     }
 
-    const realizarOperacion = () => {
-        /* ------- ENTREGO EL RESULTADO REALIZANDO LA OPERACION : ------- */
-        console.log('se ejecuto realizar operacion');
-        /* Solo cuando operacion sea activado */
-        funcionesMath.forEach(element => {
-            if (element.params === 1 && element.id === operacion.op) {
-                let resultado = element.operar(operacion.num1)
-                setSubtotal(resultado);
-            } else if (element.params === 2 && element.id === operacion.op) {
-                let resultado = element.operar(operacion.num1, operacion.num2)
-                setSubtotal(resultado);
-            }
-        });
-    }
+    const darResultado = (arg) => {
 
-    const darResultado = () => {
-        console.log('entrego el resultado');
-        setValor(subtotal);
-        console.log(operacion);
+        if(arg !== 'none'){
+            setValor(subtotal);
+            /* 'entrego el valor total en display' */
+        }
+        
     }
 
     return (
