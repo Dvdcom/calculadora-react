@@ -5,20 +5,23 @@ import Header from './componentes/Header'
 import Footer from './componentes/Footer'
 import { UserProvider } from './aplicacion/UserProvider';
 
+/* Mi app la cual contiene el provider que manejara la logica 
+y 3 componentes que contendran el front*/
+
 function App() {
   return (
     <UserProvider>
-          <div id="App">
-          <header>
-            <Header/>
-          </header>
-          <main>
-            <Main/>
-          </main>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
+      <div id="App">
+        <header>
+          <Header/>
+        </header>
+        <main>
+          <Main/>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+    </div>
     </UserProvider>
 
   );

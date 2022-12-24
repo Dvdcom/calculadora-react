@@ -1,12 +1,15 @@
 import React from 'react';
+/* importo los useContext que se encuentran en provider */
 import { useMostrarSubtotal, useMostrarValor, useMostrarOperacion} from '../aplicacion/UserProvider';
 
 const Visor = () => {
 
+    /* declaro mis constantes para poder asignarlos a lo importado */
     const valor = useMostrarValor();
     const operacion = useMostrarOperacion();
     const subtotal = useMostrarSubtotal();
 
+    /* retorno un div que contendra la informacion del display */
     return (
         <div className="resultado mb-3">
         <div id="marca">CASIO</div>
@@ -19,5 +22,8 @@ const Visor = () => {
     </div>
     );
 };
+
+/* NOTA : Tener en cuenta que como aun se encuentra en desarrollo el contenido del div 
+    #in-subtotal debera de ser ocultado por css, ya que la idea sera siempre mostrar el resultado total. */
 
 export default Visor;
