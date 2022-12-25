@@ -81,9 +81,9 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 <img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
 ##### DAVID GUTIERREZ
 
-linkedin : https://www.linkedin.com/in/davgutierrez
-Instagram : https://www.instagram.com/davgutierrez
-twitter : https://twitter.com/DavidEGutierrez
+- linkedin : https://www.linkedin.com/in/davgutierrez
+- Instagram : https://www.instagram.com/davgutierrez
+- twitter : https://twitter.com/DavidEGutierrez
 
 ### LICENCIA
 Tipo de licencia de este proyecto MIT
