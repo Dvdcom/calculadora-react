@@ -1,6 +1,6 @@
 import React from 'react';
 /* importo los useContext que se encuentran en provider */
-import { useMostrarSubtotal, useMostrarValor, useMostrarOperacion} from '../aplicacion/UserProvider';
+import { useMostrarSubtotal, useMostrarValor, useMostrarOperacion, useMostrarMemoria} from '../aplicacion/UserProvider';
 
 const Visor = () => {
 
@@ -8,18 +8,19 @@ const Visor = () => {
     const valor = useMostrarValor();
     const operacion = useMostrarOperacion();
     const subtotal = useMostrarSubtotal();
+    const memoria = useMostrarMemoria();
 
     /* retorno un div que contendra la informacion del display */
     return (
         <div className="resultado mb-3">
-        <div id="marca">CASIO</div>
-        <div id='contendoSub'>
-            <label type='text' name="in-operacion" id="in-operacion" placeholder='0'>{'operacion : ' + operacion.num1 + operacion.op + operacion.num2}</label>    
-            <label type='text' name="in-subtotal" id="in-subtotal" placeholder='0'>{'subtotal: ' + subtotal}</label>
+            <div id="marca">CASIO</div>
+                <div id='contenedorSub'>
+                    <div  id="in-memoria">{'Memoria: ' + memoria}</div>
+                    <div  id="in-operacion">{'Operacion : ' + operacion.num1 + operacion.op + operacion.num2}</div>    
+                    <div className="d-none"  id="in-subtotal" placeholder='0'>{'Subtotal: ' + subtotal}</div>
+                </div>
+            <label className="form-control mt-3" type='text' name="in-resultado" id="in-resultado">{valor}</label>
         </div>
-        
-        <label className="form-control mt-3" type='text' name="in-resultado" id="in-resultado">{valor}</label>
-    </div>
     );
 };
 

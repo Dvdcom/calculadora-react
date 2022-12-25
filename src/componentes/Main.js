@@ -11,6 +11,7 @@ const Main = () => {
                 <Visor/>
                 <Botones/>
             </div> 
+            
         </div>
 
     );
