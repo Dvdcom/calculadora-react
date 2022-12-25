@@ -113,6 +113,10 @@ export function UserProvider(props) {
 
         /* si lo que ingresa corresponda a un caracter de tipo cortador entonces entra en este if */
         if (cortadores.includes(ingreso)) {
+
+            if (ingreso === "(" || ingreso === ")" || ingreso === "ⁿ√" || ingreso === "%" || ingreso === "+/-"){
+                return noHabilitado();
+            }
             /* levanto banderin para que el proceso de asignacion de numeros cambie */
             setCompleto({ ...completo, estado: true, conteo: completo.conteo + 1 });
 
@@ -135,6 +139,11 @@ export function UserProvider(props) {
                     darResultado(ingreso);
                     break;
                 case "e":
+                    /* este es el unico boton que dicha funcion no contiene parametros para ser ejecutado , simplemente da el resultado 
+                    seteo operaciones para que solo asignando el valor de la operacion la misma de el resultado  */
+                    setOperacion({ ...operacion, num1: operacion.num1, op: ingreso, num2: operacion.num2 });
+                    break;
+                case "ᴨ":
                     /* este es el unico boton que dicha funcion no contiene parametros para ser ejecutado , simplemente da el resultado 
                     seteo operaciones para que solo asignando el valor de la operacion la misma de el resultado  */
                     setOperacion({ ...operacion, num1: operacion.num1, op: ingreso, num2: operacion.num2 });
@@ -232,6 +241,10 @@ export function UserProvider(props) {
 
     }
 
+    /* funcion de desarrollo para los funciones aun no habilitadas */
+    const noHabilitado = () => {
+        alert('Lo Lamento, esta funcion aun no se encuentra habilitada.')
+    }
     /* Retorno el provider y todas los valores para mostrar resultado y la funcion de ingresarValores
     en esta parte se asocian los useContext que fueron declarados arriba con los hooks que son declarados dentro del UserProvider  */
     return (

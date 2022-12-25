@@ -5,9 +5,9 @@ export const caracteres = ["=","(",")","+/-","X²","²√","ⁿ√","sin","cos",
 /* caracteresSimples : contiene todos los caracteres que se muestran en los botones , es usado en el componente botones.*/
 export const caracteresSimples = ["=","+","-","/","*","1","2","3","²√","4","5","6","AC","7","8","9",".","0","%"];
 /* numeros : contiene solo numeros y caracteres que corresponden a la formalizacion de un numero , este es utilizado en el provider y se utiliza para la logica. */
-export const numeros = ["0","1","2","3","4","5","6","7","8","9",".","+/-"];
+export const numeros = ["0","1","2","3","4","5","6","7","8","9","."];
 /* cortadores : contiene todos los caracteres que no son numero y se utilizan en el provider para la logica de la programacion. */
-export const cortadores = ["=","X²","²√","ⁿ√","sin","cos","tg","X³","³√","Xⁿ","/","%","In","*","log","e","-","AC","ᴨ","+","MR"];
+export const cortadores = ["(",")","+/-","=","X²","²√","ⁿ√","sin","cos","tg","X³","³√","Xⁿ","/","%","In","*","log","e","-","AC","ᴨ","+","MR"];
 /* funcionesMath : contiene objetos con funciones que son utilizados en el provider para la logica de la programacion. */
 export const funcionesMath = [
     {
@@ -99,6 +99,12 @@ export const funcionesMath = [
         tipo: 'e',
         id: 'e',
         operar: () => Math.E,
+        params: 0
+    },
+    {
+        tipo: 'ᴨ',
+        id: 'ᴨ',
+        operar: () => Math.PI,
         params: 0
     },
     {
