@@ -1,13 +1,5 @@
----
-title: "Font Awesome in R Markdown"
-output: html_document
----
 
-```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
-library(fontawesome)
-```
-
-# :fa-calculator: CALCULADORA REACT
+# CALCULADORA REACT
 Este proyecto se realizo con el fin educativo de aprender mas sobre React.js , ya que en el mismo se aplican muchos conceptos de esta biblioteca.
 Los conceptos mas aplicados son useState, useContext, useEffect, props y tambien el uso del Provider.
 El objetivo es crear una calculadora con multiples calculos que realice operaciones con un objeto llevando el calculo con un objeto de parametros basicos.
@@ -16,27 +8,27 @@ El objetivo es crear una calculadora con multiples calculos que realice operacio
 
 Evitando el uso de la funcion eval().
 
-### :fa-desktop: PREVISUALIZACION
+### PREVISUALIZACION
 
 ![](https://i.postimg.cc/fLstxxX4/calculadora-react-pc.png)
 
-### :fa-mobile: MEDIA QUERY
+### MEDIA QUERY
 
 ![](https://i.postimg.cc/SKCY2Zn7/calculadora-react-movil.png)
 
 [========]
 
-### :fa-cubes: ESTRUCTURA BASICA
+### ESTRUCTURA BASICA
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
-### :fa-wrench: INSTALACION
+### INSTALACION
 
 1. Clona el repostorio en tu equipo con este [enlace](https://github.com/Dvdcom/calculadora-react.git "enlace")
 2. Instala las dependencias con el comando `npm i`
 
 *el proyecto quedara listo para ser ejecutado.*
 
-### :fa-play: PASOS PARA SU EJECUCION
+### PASOS PARA SU EJECUCION
 
 en consola ingresa el siguiente comando 
 
@@ -46,7 +38,7 @@ Esto ejecutara la aplicación en el modo de desarrollo.
 En caso de que no se abra de forma automatica , abra http://localhost:3000 para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.
 
-### :fa-paperclip: DEPENDENCIAS
+### DEPENDENCIAS
 
 Este proyecto trabaja con las siguientes dependencias:
 
@@ -61,7 +53,7 @@ Este proyecto trabaja con las siguientes dependencias:
     "web-vitals": "^2.1.4"
   }
 ```
-#### :fa-users: CONTRIBUCION
+#### CONTRIBUCION
 
 Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar la logica y desea de aportar en proyecto , siga estos pasos:
 
@@ -84,7 +76,7 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 	* Si todo está bien, enviar con el botón *Send Pull Request.*
 	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
-### :fa-user: AUTOR
+### AUTOR
 
 <img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
 ##### DAVID GUTIERREZ
@@ -93,6 +85,6 @@ linkedin : https://www.linkedin.com/in/davgutierrez
 Instagram : https://www.instagram.com/davgutierrez
 twitter : https://twitter.com/DavidEGutierrez
 
-### :fa-search: LICENCIA
+### LICENCIA
 Tipo de licencia de este proyecto MIT
 
