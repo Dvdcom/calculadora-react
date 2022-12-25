@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# :fa-calculator: CALCULADORA REACT
+Este proyecto se realizo con el fin educativo de aprender mas sobre React.js , ya que en el mismo se aplican muchos conceptos de esta biblioteca.
+Los conceptos mas aplicados son useState, useContext, useEffect, props y tambien el uso del Provider.
+El objetivo es crear una calculadora con multiples calculos que realice operaciones con un objeto llevando el calculo con un objeto de parametros basicos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`operacion{ num1:0, op:"" ,num2:0 }`
 
-## Available Scripts
+Evitando el uso de la funcion eval().
 
-In the project directory, you can run:
+### :fa-desktop: PREVISUALIZACION
 
-### `npm start`
+![](https://i.postimg.cc/fLstxxX4/calculadora-react-pc.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### :fa-mobile: MEDIA QUERY
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](https://i.postimg.cc/SKCY2Zn7/calculadora-react-movil.png)
 
-### `npm test`
+[========]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### :fa-cubes: ESTRUCTURA BASICA
+Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm run build`
+### :fa-wrench: INSTALACION
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clona el repostorio en tu equipo con este [enlace](https://github.com/Dvdcom/calculadora-react.git "enlace")
+2. Instala las dependencias con el comando `npm i`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*el proyecto quedara listo para ser ejecutado.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### :fa-play: PASOS PARA SU EJECUCION
 
-### `npm run eject`
+en consola ingresa el siguiente comando 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Esto ejecutara la aplicación en el modo de desarrollo.
+En caso de que no se abra de forma automatica , abra http://localhost:3000 para verlo en su navegador.
+La página se volverá a cargar cuando realice cambios.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### :fa-paperclip: DEPENDENCIAS
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Este proyecto trabaja con las siguientes dependencias:
 
-## Learn More
+```javascript
+"dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  }
+```
+#### :fa-users: CONTRIBUCION
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar la logica y desea de aportar en proyecto , siga estos pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Haz Fork del repositorio.
+2. Antes de realizar modificaciones agregar la URL del repositorio original del proyecto
+`$ git remote add upstream https://github.com/User/RepoOriginal(Forkeado)`
+3. Comprueba
+`$ git remote -v`
+4. Antes de empezar a trabajar, obtener los últimos cambios del Repo Original:
+`$ git pull -r upstream nombreRamaAcontribuir`
+5. Crea una rama
+`$ git checkout -b feature-nombre-rama`
+6. Realizar todos los cambios que se desea hacer al proyecto
+7. Agregar los archivos y haz un commit
+8. Después de realizar el commit hacer el push hacia nuestro repositorio indicando la rama que hemos creado.
+`$ git push origin feature-nombre-rama`
+9. Haz un Pull Request:
+	* Hacer click en *Compare & Pull Request*
+	* Escribir cambios del Pull Request.
+	* Si todo está bien, enviar con el botón *Send Pull Request.*
+	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
-### Code Splitting
+### :fa-user: AUTOR
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
+##### DAVID GUTIERREZ
 
-### Analyzing the Bundle Size
+linkedin : https://www.linkedin.com/in/davgutierrez
+Instagram : https://www.instagram.com/davgutierrez
+twitter : https://twitter.com/DavidEGutierrez
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### :fa-search: LICENCIA
+Tipo de licencia de este proyecto MIT
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
