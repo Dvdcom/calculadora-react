@@ -1,3 +1,12 @@
+---
+title: "Font Awesome in R Markdown"
+output: html_document
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+library(fontawesome)
+```
+
 # :fa-calculator: CALCULADORA REACT
 Este proyecto se realizo con el fin educativo de aprender mas sobre React.js , ya que en el mismo se aplican muchos conceptos de esta biblioteca.
 Los conceptos mas aplicados son useState, useContext, useEffect, props y tambien el uso del Provider.
