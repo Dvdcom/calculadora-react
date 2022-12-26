@@ -7,6 +7,8 @@ El objetivo es crear una calculadora con multiples calculos que realice operacio
 
 Evitando el uso de la funcion eval().
 
+---------------------------------------
+
 ### <img src="https://i.postimg.cc/LXJX7gQ5/pc.png" alt="img-pc" width="24"/> PREVISUALIZACION
 
 ![](https://i.postimg.cc/fLstxxX4/calculadora-react-pc.png)
@@ -15,7 +17,7 @@ Evitando el uso de la funcion eval().
 
 ![](https://i.postimg.cc/SKCY2Zn7/calculadora-react-movil.png)
 
-[========]
+---------------------------------------
 
 ### <img src="https://i.postimg.cc/Dw5wwPtm/cubo.png" alt="img-cubos" width="24"/> ESTRUCTURA BASICA
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
@@ -76,7 +78,7 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
 ### <img src="https://i.postimg.cc/pXbTGTfV/licencia.png" alt="img-licencia" width="24"/> LICENCIA
-Tipo de licencia de este proyecto MIT
+Tipo de licencia de este proyecto [MIT](https://choosealicense.com/licenses/mit/)
 
 ### <img src="https://i.postimg.cc/VkzNwVZ3/person.png" alt="img-licencia" width="24"/> AUTOR
 
@@ -88,4 +90,4 @@ Tipo de licencia de este proyecto MIT
 - Instagram : https://www.instagram.com/davgutierrez
 - twitter : https://twitter.com/DavidEGutierrez
 
-[========]
+---------------------------------------
