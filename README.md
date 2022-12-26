@@ -1,3 +1,5 @@
+>>> from markdown import Markdown
+>>> from fontawesome_markdown import FontAwesomeExtension
 
 # CALCULADORA REACT
 Este proyecto se realizo con el fin educativo de aprender mas sobre React.js , ya que en el mismo se aplican muchos conceptos de esta biblioteca.
@@ -76,6 +78,9 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 	* Si todo está bien, enviar con el botón *Send Pull Request.*
 	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
+### LICENCIA
+Tipo de licencia de este proyecto MIT
+
 ### AUTOR
 
 <img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
@@ -84,7 +89,4 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 - linkedin : https://www.linkedin.com/in/davgutierrez
 - Instagram : https://www.instagram.com/davgutierrez
 - twitter : https://twitter.com/DavidEGutierrez
-
-### LICENCIA
-Tipo de licencia de este proyecto MIT
 
