@@ -1,7 +1,4 @@
->>> from markdown import Markdown
->>> from fontawesome_markdown import FontAwesomeExtension
-
-# :fa-calculator: CALCULADORA REACT
+# <img src="https://i.postimg.cc/cJKBmGbw/calc.png" alt="img-calc" width="32"/> CALCULADORA REACT
 Este proyecto se realizo con el fin educativo de aprender mas sobre React.js , ya que en el mismo se aplican muchos conceptos de esta biblioteca.
 Los conceptos mas aplicados son useState, useContext, useEffect, props y tambien el uso del Provider.
 El objetivo es crear una calculadora con multiples calculos que realice operaciones con un objeto llevando el calculo con un objeto de parametros basicos.
