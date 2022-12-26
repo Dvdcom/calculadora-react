@@ -7,27 +7,27 @@ El objetivo es crear una calculadora con multiples calculos que realice operacio
 
 Evitando el uso de la funcion eval().
 
-### PREVISUALIZACION
+### <img src="https://i.postimg.cc/LXJX7gQ5/pc.png" alt="img-pc" width="24"/> PREVISUALIZACION
 
 ![](https://i.postimg.cc/fLstxxX4/calculadora-react-pc.png)
 
-### MEDIA QUERY
+### <img src="https://i.postimg.cc/FzcKF54Q/cel.png" alt="img-cel" width="24"/> MEDIA QUERY
 
 ![](https://i.postimg.cc/SKCY2Zn7/calculadora-react-movil.png)
 
 [========]
 
-### ESTRUCTURA BASICA
+### <img src="https://i.postimg.cc/Dw5wwPtm/cubo.png" alt="img-cubos" width="24"/> ESTRUCTURA BASICA
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
-### INSTALACION
+### <img src="https://i.postimg.cc/9MsMjXsp/install.png" alt="img-install" width="24"/> INSTALACION
 
 1. Clona el repostorio en tu equipo con este [enlace](https://github.com/Dvdcom/calculadora-react.git "enlace")
 2. Instala las dependencias con el comando `npm i`
 
 *el proyecto quedara listo para ser ejecutado.*
 
-### PASOS PARA SU EJECUCION
+### <img src="https://i.postimg.cc/QxQMR3mQ/play.png" alt="img-play" width="24"/> PASOS PARA SU EJECUCION
 
 en consola ingresa el siguiente comando 
 
@@ -37,7 +37,7 @@ Esto ejecutara la aplicación en el modo de desarrollo.
 En caso de que no se abra de forma automatica , abra http://localhost:3000 para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.
 
-### DEPENDENCIAS
+### <img src="https://i.postimg.cc/vmBHg6sh/clip.png" alt="img-clip" width="24"/> DEPENDENCIAS
 
 Este proyecto trabaja con las siguientes dependencias:
 
@@ -52,7 +52,7 @@ Este proyecto trabaja con las siguientes dependencias:
     "web-vitals": "^2.1.4"
   }
 ```
-#### CONTRIBUCION
+#### <img src="https://i.postimg.cc/jqJ24NJk/colaboracion.png" alt="img-colaboracion" width="24"/> CONTRIBUCION
 
 Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar la logica y desea de aportar en proyecto , siga estos pasos:
 
@@ -75,10 +75,10 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 	* Si todo está bien, enviar con el botón *Send Pull Request.*
 	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
-### LICENCIA
+### <img src="hhttps://i.postimg.cc/pXbTGTfV/licencia.png" alt="img-licencia" width="24"/> LICENCIA
 Tipo de licencia de este proyecto MIT
 
-### AUTOR
+### <img src="https://i.postimg.cc/VkzNwVZ3/person.png" alt="img-licencia" width="24"/> AUTOR
 
 <img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
 **DAVID GUTIERREZ**
