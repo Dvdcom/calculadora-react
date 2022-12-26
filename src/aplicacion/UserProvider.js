@@ -87,8 +87,15 @@ export function UserProvider(props) {
         /* siempre que lo que ingrese corresponda a un numero entonces entrara en este if */
         if (numeros.includes(ingreso)) {
 
-            /* es un numero entonces debera de ser concatenado para poder formarse  */
+            if( ingreso === "."){
+                /* si ingresa una coma el valor concatenado no se debe de convertir en un numero */
+                valorConcatenado = "";
+                valorConcatenado += valorActual + ingreso;
+            }else{
+                /* es un numero entonces debera de ser concatenado para poder formarse  */
             valorConcatenado += Number(valorActual + ingreso);
+            }
+
             setValor(valorConcatenado);
 
             /* realizo asignacion de numero en el hook operacion
