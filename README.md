@@ -75,7 +75,7 @@ Este proyecto es a modo educativo si cree necesario algunos arreglos u optimizar
 	* Si todo está bien, enviar con el botón *Send Pull Request.*
 	* Esperar a que el autor del repositorio lo revise, acepte y mezcle en la rama correspondiente.
 
-### <img src="hhttps://i.postimg.cc/pXbTGTfV/licencia.png" alt="img-licencia" width="24"/> LICENCIA
+### <img src="https://i.postimg.cc/pXbTGTfV/licencia.png" alt="img-licencia" width="24"/> LICENCIA
 Tipo de licencia de este proyecto MIT
 
 ### <img src="https://i.postimg.cc/VkzNwVZ3/person.png" alt="img-licencia" width="24"/> AUTOR
