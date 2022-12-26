@@ -38,6 +38,7 @@ en consola ingresa el siguiente comando
 Esto ejecutara la aplicación en el modo de desarrollo.
 En caso de que no se abra de forma automatica , abra http://localhost:3000 para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.
+Puede visualizar el deploy en la siguiente [URL](https://calculadora-react-22803.netlify.app/).
 
 ### <img src="https://i.postimg.cc/vmBHg6sh/clip.png" alt="img-clip" width="24"/> DEPENDENCIAS
 
