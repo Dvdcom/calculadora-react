@@ -81,6 +81,7 @@ Tipo de licencia de este proyecto MIT
 ### <img src="https://i.postimg.cc/VkzNwVZ3/person.png" alt="img-licencia" width="24"/> AUTOR
 
 <img src="https://i.postimg.cc/XvmM92Lj/foto-perfil-arg.png" alt="img-perfil" width="100"/>
+
 **DAVID GUTIERREZ**
 
 - linkedin : https://www.linkedin.com/in/davgutierrez
