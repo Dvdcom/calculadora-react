@@ -73,8 +73,7 @@ export const funcionesMath = [
     {
         tipo: 'raiz_n',
         id: 'ⁿ√',
-        /*falta funcion javascript*/
-        operar: (num1, num2) => num1 + num2,
+        operar: (num1, num2) => Math.pow(num1, 1/num2),
         params: 2
     },
     {
