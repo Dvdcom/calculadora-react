@@ -115,8 +115,7 @@ export const funcionesMath = [
     {
         tipo: 'Porcentaje',
         id: '%',
-        /*falta funcion javascript*/
-        operar: (num1, num2) => num1 + num2,
+        operar: (num1, num2) => (num1 / num2) * 100,
         params: 2
     }
 ];
