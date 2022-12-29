@@ -121,7 +121,7 @@ export function UserProvider(props) {
         /* si lo que ingresa corresponda a un caracter de tipo cortador entonces entra en este if */
         if (cortadores.includes(ingreso)) {
 
-            if (ingreso === "(" || ingreso === ")" || ingreso === "ⁿ√" || ingreso === "%" || ingreso === "+/-"){
+            if (ingreso === "(" || ingreso === ")" || ingreso === "%" || ingreso === "+/-"){
                 return noHabilitado();
             }
             /* levanto banderin para que el proceso de asignacion de numeros cambie */
